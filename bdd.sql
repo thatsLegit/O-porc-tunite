@@ -1,4 +1,5 @@
 DROP DATABASE IF EXISTS OPORCTUNITE;
+<<<<<<< HEAD
 CREATE DATABASE OPORCTUNITE;
 USE OPORCTUNITE;
 
@@ -6,6 +7,10 @@ DROP USER IF EXISTS 'admin'@'%';
 CREATE USER 'admin'@'%' IDENTIFIED BY 'admin';
 GRANT all privileges on OPORCTUNITE.* to 'admin'@'%';
 
+=======
+
+DROP USER IF EXISTS 'admin'@'%';
+>>>>>>> bdd
 
 DROP TABLE IF EXISTS posseder;
 DROP TABLE IF EXISTS avis;
@@ -26,6 +31,35 @@ DROP TABLE IF EXISTS CategorieT;
 DROP TABLE IF EXISTS Categorie;
 
 
+<<<<<<< HEAD
+=======
+Users = (&idUsers INT, email VARCHAR(50), telephone INT, login VARCHAR(50), password VARCHAR(50), nomPhoto VARCHAR(50), dateInscription VARCHAR(50), dateConnexion VARCHAR(50));
+Elevage = (&numEleveur VARCHAR(50), nomElevage VARCHAR(50), Departement INT, tailleElevage INT, !#idUsers);
+Fiche = (&idFiche INT, titreFiche VARCHAR(50));
+Veterinaire = (&numVeterinaire VARCHAR(50), nomCabinet VARCHAR(50), adresseCabinet VARCHAR(50), !#idUsers);
+CategorieT = (&idCatTest INT, libelléT VARCHAR(50));
+Categorie = (&idCat INT, nomCat VARCHAR(50));
+Historique_Notes = (&idHistoriqueNote INT, dateN VARCHAR(50), note INT, #numEleveur*);
+Test = (&idTest INT, Libellé VARCHAR(50), unité VARCHAR(50), !#idHistoriqueNote);
+Posseder = (&#idFiche, &#idCat);
+Avis = (&#idUsers, &#idFiche, noteAvis INT, commentaireAvis VARCHAR(100), dateAvis VARCHAR(50));
+consulter = (&#idUsers, &#idFiche, dateConsultation VARCHAR(50));
+Favoris = (&#idUsers, &#idFiche, dateFavoris VARCHAR(50));
+suivre = (&#numEleveur, &#numVeterinaire);
+realiser = (&#numEleveur, &#idTest, dateTest VARCHAR(50), nbTruies INT, valeurObservée INT);
+Appartenir = (&#idTest, &#idCatTest);
+
+
+
+
+CREATE DATABASE OPORCTUNITE;
+USE OPORCTUNITE;
+
+CREATE USER 'admin'@'%' IDENTIFIED BY 'admin';
+GRANT all privileges on OPORCTUNITE.* to 'admin'@'%';
+
+
+>>>>>>> bdd
 CREATE TABLE Users(
    idUsers INT,
    email VARCHAR(50),
@@ -156,3 +190,8 @@ CREATE TABLE Appartenir(
    FOREIGN KEY(idTest) REFERENCES Test(idTest),
    FOREIGN KEY(idCatTest) REFERENCES CategorieT(idCatTest)
 );
+<<<<<<< HEAD
+=======
+
+  
+>>>>>>> bdd
